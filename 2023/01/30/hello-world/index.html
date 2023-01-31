@@ -34,7 +34,7 @@
             "@type": "Organization",
             "logo": {
                 "@type": "ImageObject",
-                "url": "http://example.comundefined"
+                "url": "http://example.com\images\AN_logo2.png"
             },
             "name": "Ansel Ch"
             },
@@ -60,6 +60,8 @@
     
 
     
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+    
 
     
 
@@ -80,7 +82,7 @@
             
             
         }
-        window.aomori_logo_typed_animated = false
+        window.aomori_logo_typed_animated = true
         window.aomori_search_algolia = false
 
     </script>
@@ -93,9 +95,16 @@
     <header class="header">
         <div class="header-type">
             
+            <div class="header-type-avatar avatar avatar-sm">
+                <img src="\images\AN_logo2.png" alt="Ansel Ch">
+            </div>
+            
             <div class="header-type-inner">
                 
-                    <a class="header-type-title" href="/">Ansel&#39;s Blog</a>
+                    <div id="typed-strings" style="display:none">
+                        <p>Ansel&#39;s Blog</p>
+                    </div>
+                    <a class="header-type-title" id="typed" href="/"></a>
                 
     
                 
@@ -104,9 +113,27 @@
         <div class="header-menu">
             <div class="header-menu-inner">
                 
+                <a href="/">Home</a>
+                
+                <a href="/about">About</a>
+                
+                <a href="/archives">Archives</a>
+                
             </div>
             <div class="header-menu-social">
                 
+    <a class="social" target="_blank" href="https://github.com/AnselCh">
+        <ion-icon name="github"></ion-icon>
+    </a>
+
+    <a class="social" target="_blank" href="https://www.linkedin.com/in/ansel-chen-779b7625b/">
+        <ion-icon name="linkedin-square"></ion-icon>
+    </a>
+
+    <a class="social" target="_blank" href="https://medium.com/@anannannan0102">
+        <ion-icon name="medium"></ion-icon>
+    </a>
+
             </div>
         </div>
 
@@ -126,6 +153,12 @@
                 </div>
                 <div class="header-menu-mobile-menu-list">
                     
+                    <a href="/">Home</a>
+                    
+                    <a href="/about">About</a>
+                    
+                    <a href="/archives">Archives</a>
+                    
                 </div>
             </div>
         </div>
@@ -138,7 +171,7 @@
             <section class="inner">
                 <section class="inner-main">
                     <div class="post">
-    <article id="post-cldimqvt70000i0bm8p0w186v" class="article article-type-post" itemscope
+    <article id="post-cldjv7enb00007sbm6fgebnyr" class="article article-type-post" itemscope
     itemprop="blogPost">
 
     <div class="article-inner">
@@ -328,6 +361,15 @@
 
 
 
+
+<!-- Google Analytics-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KQHE4N08DZ"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-KQHE4N08DZ');
+</script>
 
 
 
