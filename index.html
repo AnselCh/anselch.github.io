@@ -181,69 +181,7 @@ class="article article-type-post"
 <pre><code>torch.cuda.is_available()
 False
 </code></pre>
-<p>接下來我會整理爬過超多文章萃取出來的精華!</p>
-<hr>
-<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><p><strong>重點有三個</strong></p>
-<ol>
-<li>顯卡及CUDA版本</li>
-<li>Python版本</li>
-<li>Pytorch版本<br><strong>這三點非常重要他們有一項不對就裝不好!</strong></li>
-</ol>
-<h2 id="顯卡及CUDA版本"><a href="#顯卡及CUDA版本" class="headerlink" title="顯卡及CUDA版本"></a>顯卡及CUDA版本</h2><p>先打開powershell輸入: <strong>nvidia-smi</strong></p>
-<pre><code>nvidia-smi
-+-----------------------------------------------------------------------------+
-| NVIDIA-SMI 528.33       Driver Version: 528.33       CUDA Version: 12.0     |
-|-------------------------------+----------------------+----------------------+
-| GPU  Name            TCC/WDDM | Bus-Id        Disp.A | Volatile Uncorr. ECC |
-| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
-|                               |                      |               MIG M. |
-|===============================+======================+======================|
-|   0  Quadro M1000M      WDDM  | 00000000:01:00.0 Off |                  N/A |
-| N/A    0C    P0    N/A /  N/A |      0MiB /  2048MiB |      0%      Default |
-|                               |                      |                  N/A |
-+-------------------------------+----------------------+----------------------+
-
-+-----------------------------------------------------------------------------+
-| Processes:                                                                  |
-|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
-|        ID   ID                                                   Usage      |
-|=============================================================================|
-|  No running processes found                                                 |
-+-----------------------------------------------------------------------------+
-</code></pre>
-<p>最上面可以看到我的顯卡驅動是528.33，支援的CUDA到12版<br><strong>這邊很重要的</strong><br>千萬不要看到支援到12版就去載CUDA 12，因為Pytorch目前還不支援</p>
-<img src="./support.png" alt="torch_support" style="display:block; margin:auto;"/>
-
-<p><a target="_blank" rel="noopener" href="https://pytorch.org/blog/deprecation-cuda-python-support/">Pytorch</a>可以看到目前最高支援CUDA 11.8, CUDNN 8.7.0.84</p>
-<p>所以現在可以得到一個結論，顯卡基本上是向下相容的，所以你可以去安裝CUDA11.X，甚至CUDA10.X都可以，取決於你想裝哪一版Pytorch<br>但假如你的顯卡CUDA只支援到10，那當然你就只能裝&lt;&#x3D;10的CUDA版本</p>
-<p>終端機輸入:<strong>nvcc –version</strong> 可以查詢CUDA版本</p>
-<pre><code>nvcc --version
-nvcc: NVIDIA (R) Cuda compiler driver
-Copyright (c) 2005-2022 NVIDIA Corporation
-Built on Wed_Sep_21_10:41:10_Pacific_Daylight_Time_2022
-Cuda compilation tools, release 11.8, V11.8.89
-Build cuda_11.8.r11.8/compiler.31833905_0
-</code></pre>
-<p>至於安裝CUDA的流程可以參考:<a target="_blank" rel="noopener" href="https://medium.com/ching-i/win10-%E5%AE%89%E8%A3%9D-cuda-cudnn-%E6%95%99%E5%AD%B8-c617b3b76deb">https://medium.com/ching-i/win10-%E5%AE%89%E8%A3%9D-cuda-cudnn-%E6%95%99%E5%AD%B8-c617b3b76deb</a><br>假如有需要切換版本可以參考:<a target="_blank" rel="noopener" href="https://cvfiasd.pixnet.net/blog/post/175311141-caffe%E5%92%8Ctensorflow%E5%85%B1%E5%AD%98%28%E5%A4%9A%E7%89%88%E6%9C%ACcuda%E5%88%87%E6%8F%9B%29">https://cvfiasd.pixnet.net/blog/post/175311141-caffe%E5%92%8Ctensorflow%E5%85%B1%E5%AD%98%28%E5%A4%9A%E7%89%88%E6%9C%ACcuda%E5%88%87%E6%8F%9B%29</a></p>
-<h2 id="Python版本"><a href="#Python版本" class="headerlink" title="Python版本"></a>Python版本</h2><p>上圖可見CUDA 11.8對應的Pytorch是2.0，所以對照的Python版本是&gt;&#x3D;3.8, &lt;&#x3D;3.11</p>
-<pre><code>python -V
-Python 3.10.8
-</code></pre>
-<p>我電腦 Python 3.10.8 所以沒問題</p>
-<h2 id="Pytorch版本"><a href="#Pytorch版本" class="headerlink" title="Pytorch版本"></a>Pytorch版本</h2><p><a target="_blank" rel="noopener" href="https://pytorch.org/get-started/locally/">安裝指令</a></p>
-<img src="./cmd.png" alt="cmd" style="display:block; margin:auto;"/>
-
-<p>Pytorch首頁可以照自己規格點選然後會產生安裝指令<br>這邊我是用conda安裝的所以選conda，另外Compute Platform這裡要選跟你剛剛裝一樣版本的CUDA<br><strong>因為只要選錯版本安裝時他就會自動裝成CPU版</strong></p>
-<p>另外比<a target="_blank" rel="noopener" href="https://pytorch.org/get-started/previous-versions/">較舊的Pytorch版本</a>可點進去找自己要的安裝</p>
-<h2 id="測試"><a href="#測試" class="headerlink" title="測試"></a>測試</h2><p>最後安裝完後打開conda進入剛剛安裝的環境</p>
-<pre><code>python
-Python 3.10.9 | packaged by conda-forge | (main, Jan 11 2023, 15:15:40) [MSC v.1916 64 bit (AMD64)] on win32
-Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
-&gt;&gt;&gt; import torch
-&gt;&gt;&gt; torch.cuda.is_available()
-True
-</code></pre>
-<h2 id="出現True就成功啦"><a href="#出現True就成功啦" class="headerlink" title="出現True就成功啦!"></a>出現True就成功啦!</h2>
+<h2 id="接下來我會整理爬過超多文章萃取出來的精華"><a href="#接下來我會整理爬過超多文章萃取出來的精華" class="headerlink" title="接下來我會整理爬過超多文章萃取出來的精華!"></a>接下來我會整理爬過超多文章萃取出來的精華!<br>
         
     </div>
     </div>
