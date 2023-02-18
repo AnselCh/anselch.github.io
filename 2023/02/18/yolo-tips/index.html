@@ -171,7 +171,7 @@
             <section class="inner">
                 <section class="inner-main">
                     <div class="post">
-    <article id="post-cle9ap21k000l7obmh7lj7rgn" class="article article-type-post" itemscope
+    <article id="post-cle9ls47x000kigbm6ik87y7j" class="article article-type-post" itemscope
     itemprop="blogPost">
 
     <div class="article-inner">
@@ -298,9 +298,10 @@ pip install -r requirements.txt  # install
 pip install clearml
 # run clearml-init to connect to a ClearML server (deploy your own open-source server here, or use our free hosted server here)
 </code></pre>
-<p><strong>Export a Trained YOLOv5 Model</strong></p>
-<pre><code>python export.py --weights yolov5s.pt --include torchscript onnx
+<p><strong>Export a Trained YOLOv5 Model</strong><br><a target="_blank" rel="noopener" href="https://github.com/ultralytics/yolov5/issues/251">TFLite, ONNX, CoreML, TensorRT Export</a></p>
+<pre><code>python export.py --weights yolov5s.pt --include torchscript onnx openvino
 </code></pre>
+<p><strong>訓練自己資料</strong><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_45945548/article/details/121701492">train</a></p>
 
         </div>
 
