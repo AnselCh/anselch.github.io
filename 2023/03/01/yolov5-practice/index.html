@@ -254,7 +254,7 @@ from PIL import Image
     model.classes = chosse_classes # class =&#39;plate&#39;
     return model
 </code></pre>
-<p>torch.hub.load的導入參數有問題可以參考官方文件，這邊不贅述<br>至於model.classes &#x3D; 36 是指只推論編號第36的label，也就是’plate’，因為我當標記時順便把車牌內容也標進去了<br>如果不加這行就會把所有偵測到的classes都顯示出來</p>
+<p>torch.hub.load的導入參數有問題可以參考官方文件，這邊不贅述</p>
 <pre><code>def inference(img_path,model):
     img = Image.open(img_path)
     results = model(img)
@@ -302,7 +302,7 @@ from PIL import Image
 if __name__ == &#39;__main__&#39;:
     main()
 </code></pre>
-<p>自行帶入每個參數的路徑就可以執行了!</p>
+<p>自行帶入每個參數的路徑就可以執行了!<br>至於model.classes &#x3D; 36 是指只推論編號第36的label，也就是’plate’，因為我當標記時順便把車牌內容也標進去了<br>如果不加這行就會把所有偵測到的classes都顯示出來</p>
 <img src="./crop.jpg"  alt="擷取車牌" />
 
 <p>大致上到這邊就完成簡易的車牌辨識了!</p>
