@@ -176,7 +176,7 @@
             <section class="inner">
                 <section class="inner-main">
                     <div class="post">
-    <article id="post-cleu0izb10002l0bmge9jb02t" class="article article-type-post" itemscope
+    <article id="post-cleu0l5920010dkbm2qvv5jon" class="article article-type-post" itemscope
     itemprop="blogPost">
 
     <div class="article-inner">
@@ -274,6 +274,7 @@ from PIL import Image
             cropped.save(f&#39;./test/palte&#123;i&#125;.jpg&#39;)
             print(f&#39;save plate&#123;i&#125;.jpg success&#39;)
 </code></pre>
+<p>results.pandas().xyxy[0]會顯示出標記的四個座標，這邊用PIL的crop截取車牌並存檔<br>這邊不用cv2的原因是cv2不支援座標內有小數點</p>
 <pre><code>def main():
     yolov5_path = &#39;path&#39;
     model_path = &#39;path&#39;
@@ -300,9 +301,8 @@ from PIL import Image
 
 if __name__ == &#39;__main__&#39;:
     main()
-
 </code></pre>
-<p>results.pandas().xyxy[0]會顯示出標記的四個座標，這邊用PIL的crop截取車牌並存檔<br>這邊不用cv2的原因是cv2不支援座標內有小數點</p>
+<p>自行帶入每個參數的路徑就可以執行了!</p>
 <img src="./crop.jpg"  alt="擷取車牌" />
 
 <p>大致上到這邊就完成簡易的車牌辨識了!</p>
@@ -326,7 +326,7 @@ if __name__ == &#39;__main__&#39;:
   
   
     <a href="/2023/02/18/yolo-tips/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-caption">precedente</div>
+      <div class="article-nav-caption">上一篇</div>
       <div class="article-nav-title">[Pytorch]Yolov5的一些筆記</div>
     </a>
   
@@ -334,7 +334,7 @@ if __name__ == &#39;__main__&#39;:
 
 
     <section class="share">
-        <div class="share-title">share</div>
+        <div class="share-title">分享</div>
         <a class="share-item" target="_blank"
             href="https://twitter.com/share?text=[Pytorch]嘗試用Yolov5做車牌辨識 - Ansel's Blog&url=http%3A%2F%2Fexample.com%2F2023%2F03%2F01%2Fyolov5-practice%2F">
             <ion-icon name="logo-twitter"></ion-icon>
