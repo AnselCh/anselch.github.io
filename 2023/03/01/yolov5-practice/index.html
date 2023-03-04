@@ -176,7 +176,7 @@
             <section class="inner">
                 <section class="inner-main">
                     <div class="post">
-    <article id="post-cletz745z000ohwbm7cne7csf" class="article article-type-post" itemscope
+    <article id="post-cleu0izb10002l0bmge9jb02t" class="article article-type-post" itemscope
     itemprop="blogPost">
 
     <div class="article-inner">
@@ -248,31 +248,59 @@
 <pre><code>import torch
 import cv2
 from PIL import Image
-
-model = torch.hub.load(r&#39;C:\Users\ansel_chen\VScode_Ansel\pytorch_practice\yolov5&#39;, &#39;custom&#39;,
-                       path=r&#39;C:\Users\ansel_chen\VScode_Ansel\pytorch_practice\model\moto.pt&#39;, source=&#39;local&#39;,force_reload=True)
-model.classes = 36 # class =&#39;plate&#39;
+</code></pre>
+<pre><code>def model_load(yolov5_path,model_path,chosse_classes):
+    model = torch.hub.load(yolov5_path, &#39;custom&#39;,model_path, source=&#39;local&#39;,force_reload=True)
+    model.classes = chosse_classes # class =&#39;plate&#39;
+    return model
 </code></pre>
 <p>torch.hub.load的導入參數有問題可以參考官方文件，這邊不贅述<br>至於model.classes &#x3D; 36 是指只推論編號第36的label，也就是’plate’，因為我當標記時順便把車牌內容也標進去了<br>如果不加這行就會把所有偵測到的classes都顯示出來</p>
-<pre><code>img = Image.open(
-    r&#39;C:\Users\ansel_chen\VScode_Ansel\pytorch_practice\torch_crop\TEST.JPG&#39;)
-
-results = model(img)
-results.show()
+<pre><code>def inference(img_path,model):
+    img = Image.open(img_path)
+    results = model(img)
+    plate = results.pandas().xyxy[0]
+    return img,plate
 </code></pre>
 <p>這邊是把圖片用載入的model進行推論</p>
-<pre><code>plate = results.pandas().xyxy[0]
-img = img.rotate(-90, expand=True) #PIL方向需要轉-90
+<pre><code>def crop_plates(img,plate):
+    img_tran = img.rotate(-90, expand=True)
+    for i in range(plate.index.array.size):
+        if plate[&#39;name&#39;][i] == &#39;plate&#39;:
+            x = plate[&#39;xmin&#39;][i]
+            y = plate[&#39;ymin&#39;][i]
+            x2 = plate[&#39;xmax&#39;][i]
+            y2 = plate[&#39;ymax&#39;][i]
+            cropped = img_tran .crop((x, y, x2, y2))
+            cropped.save(f&#39;./test/palte&#123;i&#125;.jpg&#39;)
+            print(f&#39;save plate&#123;i&#125;.jpg success&#39;)
+</code></pre>
+<pre><code>def main():
+    yolov5_path = &#39;path&#39;
+    model_path = &#39;path&#39;
+    chosse_classes = 36 # or None
+    img_path = &#39;path&#39;
 
-for i in range(plate.index.array.size):
-    if plate[&#39;name&#39;][i] == &#39;plate&#39;:
-        x = plate[&#39;xmin&#39;][i]
-        y = plate[&#39;ymin&#39;][i]
-        x2 = plate[&#39;xmax&#39;][i]
-        y2 = plate[&#39;ymax&#39;][i]
-        cropped = img.crop((x, y, x2, y2))
-        cropped.save(f&#39;./test/palte&#123;i&#125;.jpg&#39;)
-        print(f&#39;save plate&#123;i&#125;.jpg success&#39;)
+    try:
+        print(&#39;import model&#39;)
+        model = model_load(yolov5_path,model_path,chosse_classes)
+    except:
+        print(&#39;import model fail&#39;)
+
+    try:
+        print(&#39;start inference&#39;)
+        img,plate = inference(img_path,model)
+        print(&#39;inference finish&#39;)
+    except:
+        print(&#39;inference error&#39;)
+
+    try:
+        crop_plates(img,plate)
+    except:
+        print(&#39;crop fail&#39;)
+
+if __name__ == &#39;__main__&#39;:
+    main()
+
 </code></pre>
 <p>results.pandas().xyxy[0]會顯示出標記的四個座標，這邊用PIL的crop截取車牌並存檔<br>這邊不用cv2的原因是cv2不支援座標內有小數點</p>
 <img src="./crop.jpg"  alt="擷取車牌" />
