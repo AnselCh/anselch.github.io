@@ -6,55 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
     
-    <title>[Pytorch]嘗試用Yolov5做車牌辨識 | Ansel&#39;s Blog</title>
+    <title>[PyQt5] 做一個GUI介面的時鐘吧! | Ansel&#39;s Blog</title>
 
     <meta name="description" content="&lt;meta name=&#34;referrer&#34; content=&#34;no-referrer&#34; /&gt;
-# 前言
- ## Yolov5是什麼?
- Yolov5是一種用於物件偵測的深度學習模型，它可以在圖像中找出並標記不同類別的物件。監督試學習是一種機器學習方法，它需要使用已經標註了正確答案的資料集來訓練模型。
+&lt;img src=&#34;./max.jpg&#34; alt=&#34;max&#34; style=&#34;display:block; margin:auto;&#34;/&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://github.com/ultralytics/yolov5&#34;&gt;Yolov5官網&lt;/a&gt;&lt;/p&gt;">
+&lt;p&gt;專案地址:&lt;a href=&#34;https://github.com/AnselCh/widget_clock&#34;&gt;https://github.com/AnselCh/widget_clock&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;目標&#34;&gt;&lt;a href=&#34;#目標&#34; class=&#34;headerlink&#34; title=&#34;目標&#34;&gt;&lt;/a&gt;目標&lt;/h1&gt;&lt;p&gt;做出一個可以自訂位子且能調整透明度的小時鐘。&lt;/p&gt;">
     <meta name="keywords" content="">
 
     
 
     <meta property="og:locale" content="zh-tw" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content= "[Pytorch]嘗試用Yolov5做車牌辨識 | Ansel&#39;s Blog"  />
+    <meta property="og:title" content= "[PyQt5] 做一個GUI介面的時鐘吧! | Ansel&#39;s Blog"  />
     <meta property="og:description" content= "&lt;meta name=&#34;referrer&#34; content=&#34;no-referrer&#34; /&gt;
-# 前言
- ## Yolov5是什麼?
- Yolov5是一種用於物件偵測的深度學習模型，它可以在圖像中找出並標記不同類別的物件。監督試學習是一種機器學習方法，它需要使用已經標註了正確答案的資料集來訓練模型。
+&lt;img src=&#34;./max.jpg&#34; alt=&#34;max&#34; style=&#34;display:block; margin:auto;&#34;/&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://github.com/ultralytics/yolov5&#34;&gt;Yolov5官網&lt;/a&gt;&lt;/p&gt;" />
-    <meta property="og:url" content="http://example.com/2023/03/01/yolov5-practice/index.html" />
+&lt;p&gt;專案地址:&lt;a href=&#34;https://github.com/AnselCh/widget_clock&#34;&gt;https://github.com/AnselCh/widget_clock&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;目標&#34;&gt;&lt;a href=&#34;#目標&#34; class=&#34;headerlink&#34; title=&#34;目標&#34;&gt;&lt;/a&gt;目標&lt;/h1&gt;&lt;p&gt;做出一個可以自訂位子且能調整透明度的小時鐘。&lt;/p&gt;" />
+    <meta property="og:url" content="http://example.com/2023/03/06/clockapp/index.html" />
     <meta property="og:site_name" content="" />
     <meta property="article:author" content="Ansel Ch" />
     <meta property="article:publisher" content="" />
     <meta property="og:description" content="&lt;meta name=&#34;referrer&#34; content=&#34;no-referrer&#34; /&gt;
-# 前言
- ## Yolov5是什麼?
- Yolov5是一種用於物件偵測的深度學習模型，它可以在圖像中找出並標記不同類別的物件。監督試學習是一種機器學習方法，它需要使用已經標註了正確答案的資料集來訓練模型。
+&lt;img src=&#34;./max.jpg&#34; alt=&#34;max&#34; style=&#34;display:block; margin:auto;&#34;/&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://github.com/ultralytics/yolov5&#34;&gt;Yolov5官網&lt;/a&gt;&lt;/p&gt;" />
-    <meta name="twitter:title" content="[Pytorch]嘗試用Yolov5做車牌辨識 | Ansel&#39;s Blog"/>
+&lt;p&gt;專案地址:&lt;a href=&#34;https://github.com/AnselCh/widget_clock&#34;&gt;https://github.com/AnselCh/widget_clock&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;目標&#34;&gt;&lt;a href=&#34;#目標&#34; class=&#34;headerlink&#34; title=&#34;目標&#34;&gt;&lt;/a&gt;目標&lt;/h1&gt;&lt;p&gt;做出一個可以自訂位子且能調整透明度的小時鐘。&lt;/p&gt;" />
+    <meta name="twitter:title" content="[PyQt5] 做一個GUI介面的時鐘吧! | Ansel&#39;s Blog"/>
     <meta name="twitter:description" content="&lt;meta name=&#34;referrer&#34; content=&#34;no-referrer&#34; /&gt;
-# 前言
- ## Yolov5是什麼?
- Yolov5是一種用於物件偵測的深度學習模型，它可以在圖像中找出並標記不同類別的物件。監督試學習是一種機器學習方法，它需要使用已經標註了正確答案的資料集來訓練模型。
+&lt;img src=&#34;./max.jpg&#34; alt=&#34;max&#34; style=&#34;display:block; margin:auto;&#34;/&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://github.com/ultralytics/yolov5&#34;&gt;Yolov5官網&lt;/a&gt;&lt;/p&gt;"/>
+&lt;p&gt;專案地址:&lt;a href=&#34;https://github.com/AnselCh/widget_clock&#34;&gt;https://github.com/AnselCh/widget_clock&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;目標&#34;&gt;&lt;a href=&#34;#目標&#34; class=&#34;headerlink&#34; title=&#34;目標&#34;&gt;&lt;/a&gt;目標&lt;/h1&gt;&lt;p&gt;做出一個可以自訂位子且能調整透明度的小時鐘。&lt;/p&gt;"/>
     <script type="application/ld+json">
         {
             "description": "&lt;meta name=&#34;referrer&#34; content=&#34;no-referrer&#34; /&gt;
-# 前言
- ## Yolov5是什麼?
- Yolov5是一種用於物件偵測的深度學習模型，它可以在圖像中找出並標記不同類別的物件。監督試學習是一種機器學習方法，它需要使用已經標註了正確答案的資料集來訓練模型。
+&lt;img src=&#34;./max.jpg&#34; alt=&#34;max&#34; style=&#34;display:block; margin:auto;&#34;/&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://github.com/ultralytics/yolov5&#34;&gt;Yolov5官網&lt;/a&gt;&lt;/p&gt;",
+&lt;p&gt;專案地址:&lt;a href=&#34;https://github.com/AnselCh/widget_clock&#34;&gt;https://github.com/AnselCh/widget_clock&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;目標&#34;&gt;&lt;a href=&#34;#目標&#34; class=&#34;headerlink&#34; title=&#34;目標&#34;&gt;&lt;/a&gt;目標&lt;/h1&gt;&lt;p&gt;做出一個可以自訂位子且能調整透明度的小時鐘。&lt;/p&gt;",
             "author": { "@type": "Person", "name": "Ansel Ch" },
             "@type": "BlogPosting",
-            "url": "http://example.com/2023/03/01/yolov5-practice/index.html",
+            "url": "http://example.com/2023/03/06/clockapp/index.html",
             "publisher": {
             "@type": "Organization",
             "logo": {
@@ -63,11 +58,11 @@
             },
             "name": "Ansel Ch"
             },
-            "headline": "[Pytorch]嘗試用Yolov5做車牌辨識 | Ansel&#39;s Blog",
-            "datePublished": "2023-03-01T03:26:55.000Z",
+            "headline": "[PyQt5] 做一個GUI介面的時鐘吧! | Ansel&#39;s Blog",
+            "datePublished": "2023-03-06T03:06:13.000Z",
             "mainEntityOfPage": {
                 "@type": "WebPage",
-                "@id": "http://example.com/2023/03/01/yolov5-practice/index.html"
+                "@id": "http://example.com/2023/03/06/clockapp/index.html"
             },
             "@context": "http://schema.org"
         }
@@ -196,7 +191,7 @@
             <section class="inner">
                 <section class="inner-main">
                     <div class="post">
-    <article id="post-clewkwl6n001248bmchmm7nfg" class="article article-type-post" itemscope
+    <article id="post-clewkwl6l000z48bm7xumhvhe" class="article article-type-post" itemscope
     itemprop="blogPost">
 
     <div class="article-inner">
@@ -212,7 +207,7 @@
             
   
     <h1 class="article-title" itemprop="name">
-      [Pytorch]嘗試用Yolov5做車牌辨識
+      [PyQt5] 做一個GUI介面的時鐘吧!
     </h1>
   
 
@@ -222,7 +217,7 @@
         <div class="article-more-info article-more-info-post hairline">
 
             <div class="article-date">
-  <time datetime="2023-03-01T03:26:55.000Z" itemprop="datePublished">2023-03-01</time>
+  <time datetime="2023-03-06T03:06:13.000Z" itemprop="datePublished">2023-03-06</time>
 </div>
 
             
@@ -233,7 +228,7 @@
 
             
             <div class="article-tag">
-                <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AI/" rel="tag">AI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DL/" rel="tag">DL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ML/" rel="tag">ML</a></li></ul>
+                <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PyQt5/" rel="tag">PyQt5</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li></ul>
             </div>
             
 
@@ -243,144 +238,113 @@
 
         <div class="article-entry post-inner-html hairline" itemprop="articleBody">
             <meta name="referrer" content="no-referrer" />
-# 前言
- ## Yolov5是什麼?
- Yolov5是一種用於物件偵測的深度學習模型，它可以在圖像中找出並標記不同類別的物件。監督試學習是一種機器學習方法，它需要使用已經標註了正確答案的資料集來訓練模型。
+<img src="./max.jpg" alt="max" style="display:block; margin:auto;"/>
 
-<p><a target="_blank" rel="noopener" href="https://github.com/ultralytics/yolov5">Yolov5官網</a></p>
+<p>專案地址:<a target="_blank" rel="noopener" href="https://github.com/AnselCh/widget_clock">https://github.com/AnselCh/widget_clock</a></p>
+<h1 id="目標"><a href="#目標" class="headerlink" title="目標"></a>目標</h1><p>做出一個可以自訂位子且能調整透明度的小時鐘。</p>
 <span id="more"></span>
 
-<h1 id="Yolov5-訓練流程"><a href="#Yolov5-訓練流程" class="headerlink" title="Yolov5 訓練流程"></a>Yolov5 訓練流程</h1><p>先來看一下官網提供的一條龍服務</p>
-<img src="./chat_flow.jpg"  alt="流程圖" />
-
-<p>首先左邊資料蒐集完之後可以用<a target="_blank" rel="noopener" href="https://roboflow.com/?ref=ultralytics">roboflow</a>進行標記，個人使用起來覺得比labelimg好用，而且也可以跨不同裝置，有點像colab登入帳號就能開始用。</p>
-<img src="./roboflow.jpg"  alt="label" />
-
-<p>圖中我大概標記了250張圖片，其中有順便標記車牌內的數字(這部分等到最後再說)，標記完後可以依個人習慣設定train,valid,test的比例。</p>
-<hr>
-<p>標記完可以選擇要下載檔案或是用api的方式引入訓練腳本<br><a target="_blank" rel="noopener" href="https://colab.research.google.com/drive/1g5K7OQkrMCSvsT8dKqXw1Fou2aMF76YR?usp=sharing">colab</a>官方腳本在這，再自行替換api_key<br>其中model可以自行成適合自己的，在執行的時候我用yolov5m ,–batch 128發現記憶體不足，所以將batch降低才能開始訓練。<br>這部分的參數可以參考:<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_41990671/article/details/107300314">https://blog.csdn.net/weixin_41990671/article/details/107300314</a><br>訓練後就可以得到best.pt了</p>
-<hr>
-<h1 id="靜態圖片車牌辨識"><a href="#靜態圖片車牌辨識" class="headerlink" title="靜態圖片車牌辨識"></a>靜態圖片車牌辨識</h1><div style="float: left; width: 50%;">
-  <img src="./TEST.JPG" alt="before" style="display:block; margin:auto;" height="120%" width="90%"/>
-</div>
-<div tyle="float: right; width: 50%;">
-  <img src="./output.png" alt="after" style="display:block; margin:auto;"height="60%" width="45%" />
-</div>
-<br/>
-
-<p>這邊使用torch.hub導入訓練好的model進行推論</p>
-<pre><code>import torch
-import cv2
-from PIL import Image
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><pre><code>from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+from PyQt5.QtWidgets import *
+from time import strftime
+import sys
+import threading
 </code></pre>
-<pre><code>def model_load(yolov5_path,model_path,chosse_classes):
-    model = torch.hub.load(yolov5_path, &#39;custom&#39;,model_path, source=&#39;local&#39;,force_reload=True)
-    model.classes = chosse_classes # class =&#39;plate&#39;
-    return model
+<p>載入GUI套件跟多執行緒，因為不能因調整透明度導致時間暫停更新，所以採用多執行緒。</p>
+<pre><code>class MyWidget(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle(&#39;Ann Clock&#39;)
+        self.setWindowFlags(Qt.WindowStaysOnTopHint)  # 視窗置頂
+        self.setWindowFlag(Qt.FramelessWindowHint)  # 標題列消失
+        self.setAttribute(Qt.WA_TranslucentBackground)  # 整個label以外設為半透明
+        self.resize(360, 110)
+        self.setUpdatesEnabled(True)  # 時間更新的Thread
+        self.ui()
+        self.clock_window = True
 </code></pre>
-<p>torch.hub.load的導入參數有問題可以參考官方文件，這邊不贅述</p>
-<pre><code>def inference(img_path,model):
-    img = Image.open(img_path)
-    results = model(img)
-    plate = results.pandas().xyxy[0]
-    return img,plate
+<p>主視窗建置跟設定</p>
+<pre><code>def ui(self):
+
+        self.label_time = QLabel(self)
+        font = QFont()
+        font.setFamily(&#39;calibri&#39;)
+        font.setPointSize(40)
+        font.setBold(True)
+        self.label = QLabel(self)
+        self.label.setGeometry(140, 90, 100, 30)
+        self.label_time.setFont(font)
+        self.label_time.setAlignment(Qt.AlignCenter)
+        radius = 12
+        self.label_time.setStyleSheet(&#39;&#39;&#39;
+            color:	black;
+            background:rgb(245, 245, 245);
+            border-top-left-radius:&#123;0&#125;px;
+            border-bottom-left-radius:&#123;0&#125;px;
+            border-top-right-radius:&#123;0&#125;px;
+            border-bottom-right-radius:&#123;0&#125;px;
+            &#39;&#39;&#39;.format(radius))
+        self.slider = QSlider(self)
+        self.slider.setGeometry(30, 75, 300, 30)
+        self.slider.setRange(1, 10)
+        self.slider.setValue(5)
+        self.slider.setOrientation(1)
+        self.slider.setStyleSheet(&#39;&#39;&#39;
+        QSlider &#123;   border-radius: 10px;    &#125;
+        QSlider::groove:horizontal &#123;
+            height: 5px;
+            background: #C2C287;
+        &#125;
+        QSlider::handle:horizontal&#123;
+            background: #FFFFAA;
+            width: 16px;
+            height: 16px;
+            margin:-6px 0;
+            border-radius:8px;
+        &#125;
+        QSlider::sub-page:horizontal&#123;
+            background:#A5A552;
+        &#125;
+        &#39;&#39;&#39;)
 </code></pre>
-<p>這邊是把圖片用載入的model進行推論</p>
-<pre><code>def crop_plates(img,plate):
-    img_tran = img.rotate(-90, expand=True)
-    for i in range(plate.index.array.size):
-        if plate[&#39;name&#39;][i] == &#39;plate&#39;:
-            x = plate[&#39;xmin&#39;][i]
-            y = plate[&#39;ymin&#39;][i]
-            x2 = plate[&#39;xmax&#39;][i]
-            y2 = plate[&#39;ymax&#39;][i]
-            cropped = img_tran .crop((x, y, x2, y2))
-            cropped.save(f&#39;./test/plate&#123;i&#125;.jpg&#39;)
-            print(f&#39;save plate&#123;i&#125;.jpg success&#39;)
+<p>setStyleSheet設定四個角的平滑度跟label顏色<br>並加上slider(滑桿)調整透明度</p>
+<pre><code>def nowtime(self):
+        while self.clock_window:
+            string = strftime(&#39;%H:%M:%S %p&#39;)
+            self.label_time.setText(string)
 </code></pre>
-<p>results.pandas().xyxy[0]會顯示出標記的四個座標，這邊用PIL的crop截取車牌並存檔<br>這邊不用cv2的原因是cv2不支援座標內有小數點</p>
-<pre><code>def main():
-    yolov5_path = &#39;path&#39;
-    model_path = &#39;path&#39;
-    chosse_classes = 36 # or None
-    img_path = &#39;path&#39;
-
-    try:
-        print(&#39;import model&#39;)
-        model = model_load(yolov5_path,model_path,chosse_classes)
-    except:
-        print(&#39;import model fail&#39;)
-
-    try:
-        print(&#39;start inference&#39;)
-        img,plate = inference(img_path,model)
-        print(&#39;inference finish&#39;)
-    except:
-        print(&#39;inference error&#39;)
-
-    try:
-        crop_plates(img,plate)
-    except:
-        print(&#39;crop fail&#39;)
-
-if __name__ == &#39;__main__&#39;:
-    main()
+<p>這邊是刷新時間的while迴圈，等等會用一個執行緒調用</p>
+<pre><code>def transparency(self):
+        while self.clock_window:
+            user_setting = ((self.slider.value())/10)
+            tran = user_setting
+            self.setWindowOpacity(tran)
 </code></pre>
-<p>自行帶入每個參數的路徑就可以執行了!<br>至於model.classes &#x3D; 36 是指只推論編號第36的label，也就是plate，因為我當標記時順便把車牌內容也標進去了<br>如果不加這行就會把所有偵測到的classes都顯示出來</p>
-<img src="./crop.jpg"  alt="擷取車牌" />
+<p>這邊是讀取slider調整數值while迴圈，等等會用另一個執行緒調用，來實現一邊調整透明度又不影響時間更新。</p>
+<pre><code>def closeEvent(self, event):
+        self.clock_window = False
 
-<p>大致上到這邊就完成簡易的車牌辨識了!</p>
-<hr>
-<h1 id="關於車牌內文字辨識"><a href="#關於車牌內文字辨識" class="headerlink" title="關於車牌內文字辨識"></a>關於車牌內文字辨識</h1><p>講道開源OCR辨識就必須提到Tesseract及EasyOCR，不過一開始嘗試後發現效果不是太好，可能跟車牌角度不固定有關。<br>後來想說乾脆用yolo一起訓練成模型看看。</p>
-<p>先上程式碼</p>
-<pre><code>import torch
-import cv2
-import numpy
-from PIL import Image
+def mousePressEvent(self, event):
+    self.oldPosition = event.globalPos()
 
-def model_load(yolov5_path,model_path,chosse_classes):
-    model = torch.hub.load(yolov5_path, &#39;custom&#39;,model_path, source=&#39;local&#39;,force_reload=True)
-    model.classes = chosse_classes # class =&#39;plate&#39;
-    return model
-
-def inference(img_path,model):
-    img = Image.open(img_path)
-    img = img.rotate(0, expand=True)
-    results = model(img,size=80)
-    results.show()
-    print(results.pandas().xyxy[0].sort_values(by=&quot;xmin&quot;,ascending=True))
-
-def main():
-    yolov5_path = r&#39;C:\Users\ansel_chen\VScode_Ansel\pytorch_practice\yolov5&#39;
-    model_path = r&#39;C:\Users\ansel_chen\VScode_Ansel\pytorch_practice\model\moto.pt&#39;
-    chosse_classes = [i for i in range(35)]
-    img_path = r&#39;C:\Users\ansel_chen\VScode_Ansel\pytorch_practice\torch_crop\test\plate.jpg&#39;
-
-    try:
-        print(&#39;import model&#39;)
-        model = model_load(yolov5_path,model_path,chosse_classes)
-    except:
-        print(&#39;import model fail&#39;)
-
-    try:
-        print(&#39;start inference&#39;)
-        inference(img_path,model)
-
-    except:
-        print(&#39;inference error&#39;)
-
-if __name__ == &#39;__main__&#39;:
-    main()
+def mouseMoveEvent(self, event):
+    delta = QPoint(event.globalPos() - self.oldPosition)
+    self.move(self.x() + delta.x(), self.y() + delta.y())
+    self.oldPosition = event.globalPos()
 </code></pre>
-<p>跟剛剛用同一套模型只是拿掉plate的類別，之後再用sort_values(by&#x3D;”xmin”,ascending&#x3D;True)降冪排序讓偵測到的內容是由左至右!</p>
-<div style="float: left; width: 50%;">
-  <img src="./plate1.jpg" alt="plate" style="display:block; margin:auto;" height="30%" width="50%"/>
-</div>
-<div tyle="float: right; width: 50%;">
-  <img src="./result.jpg" alt="result" style="display:block; margin:auto;"height="60%" width="45%" />
-</div>
-
-<p>很明顯辨識效果一樣沒有很好，畢竟訓練集沒有很完整，所以之後要用這個方法進辨識的話車牌的角度跟資料量就需要再更完整才行。</p>
+<p>closeEvent是結束視窗函數，下面兩段則是讓視窗能夠點及任何位子就能拉到自訂位子，不過在ubuntu上執行位子會有點怪怪的，不確定是不是我個人問題?</p>
+<pre><code>if __name__ == &#39;__main__&#39;:
+    app = QApplication(sys.argv)
+    window = MyWidget()
+    clock = threading.Thread(target=window.nowtime)
+    se = threading.Thread(target=window.transparency)
+    clock.start()
+    se.start()
+    window.show()
+    sys.exit(app.exec_())
+</code></pre>
+<p>最後是啟動GUI的函式。</p>
 
         </div>
 
@@ -399,19 +363,10 @@ if __name__ == &#39;__main__&#39;:
     
 <nav class="article-nav">
   
-    <a href="/2023/03/06/clockapp/" id="article-nav-newer" class="article-nav-link-wrap">
-      <div class="article-nav-caption">下一篇</div>
-      <div class="article-nav-title">
-        
-          [PyQt5] 做一個GUI介面的時鐘吧!
-        
-      </div>
-    </a>
   
-  
-    <a href="/2023/02/18/yolo-tips/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2023/03/01/yolov5-practice/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-caption">上一篇</div>
-      <div class="article-nav-title">[Pytorch]Yolov5的一些筆記</div>
+      <div class="article-nav-title">[Pytorch]嘗試用Yolov5做車牌辨識</div>
     </a>
   
 </nav>
@@ -420,15 +375,15 @@ if __name__ == &#39;__main__&#39;:
     <section class="share">
         <div class="share-title">分享</div>
         <a class="share-item" target="_blank"
-            href="https://twitter.com/share?text=[Pytorch]嘗試用Yolov5做車牌辨識 - Ansel's Blog&url=http%3A%2F%2Fexample.com%2F2023%2F03%2F01%2Fyolov5-practice%2F">
+            href="https://twitter.com/share?text=[PyQt5] 做一個GUI介面的時鐘吧! - Ansel's Blog&url=http%3A%2F%2Fexample.com%2F2023%2F03%2F06%2Fclockapp%2F">
             <ion-icon name="logo-twitter"></ion-icon>
         </a>
         <a class="share-item" target="_blank"
-            href="https://www.facebook.com/sharer.php?title=[Pytorch]嘗試用Yolov5做車牌辨識 - Ansel's Blog&u=http%3A%2F%2Fexample.com%2F2023%2F03%2F01%2Fyolov5-practice%2F">
+            href="https://www.facebook.com/sharer.php?title=[PyQt5] 做一個GUI介面的時鐘吧! - Ansel's Blog&u=http%3A%2F%2Fexample.com%2F2023%2F03%2F06%2Fclockapp%2F">
             <ion-icon name="logo-facebook"></ion-icon>
         </a>
         <!-- <a class="share-item" target="_blank"
-            href="https://service.weibo.com/share/share.php?title=[Pytorch]嘗試用Yolov5做車牌辨識 - Ansel's Blog&url=http://example.com/2023/03/01/yolov5-practice/&pic=">
+            href="https://service.weibo.com/share/share.php?title=[PyQt5] 做一個GUI介面的時鐘吧! - Ansel's Blog&url=http://example.com/2023/03/06/clockapp/&pic=">
             <div class="n-icon n-icon-weibo"></div>
         </a> -->
     </section>
