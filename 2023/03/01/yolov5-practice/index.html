@@ -176,7 +176,7 @@
             <section class="inner">
                 <section class="inner-main">
                     <div class="post">
-    <article id="post-cleu32ndn0006sobmhbwmey3j" class="article article-type-post" itemscope
+    <article id="post-clew7gp6l000okkbm8aa98bef" class="article article-type-post" itemscope
     itemprop="blogPost">
 
     <div class="article-inner">
@@ -271,7 +271,7 @@ from PIL import Image
             x2 = plate[&#39;xmax&#39;][i]
             y2 = plate[&#39;ymax&#39;][i]
             cropped = img_tran .crop((x, y, x2, y2))
-            cropped.save(f&#39;./test/palte&#123;i&#125;.jpg&#39;)
+            cropped.save(f&#39;./test/plate&#123;i&#125;.jpg&#39;)
             print(f&#39;save plate&#123;i&#125;.jpg success&#39;)
 </code></pre>
 <p>results.pandas().xyxy[0]會顯示出標記的四個座標，這邊用PIL的crop截取車牌並存檔<br>這邊不用cv2的原因是cv2不支援座標內有小數點</p>
@@ -306,6 +306,57 @@ if __name__ == &#39;__main__&#39;:
 <img src="./crop.jpg"  alt="擷取車牌" />
 
 <p>大致上到這邊就完成簡易的車牌辨識了!</p>
+<hr>
+<h1 id="關於車牌內文字辨識"><a href="#關於車牌內文字辨識" class="headerlink" title="關於車牌內文字辨識"></a>關於車牌內文字辨識</h1><p>講道開源OCR辨識就必須提到Tesseract及EasyOCR，不過一開始嘗試後發現效果不是太好，可能跟車牌角度不固定有關。<br>後來想說乾脆用yolo一起訓練成模型看看。</p>
+<p>先上程式碼</p>
+<pre><code>import torch
+import cv2
+import numpy
+from PIL import Image
+
+def model_load(yolov5_path,model_path,chosse_classes):
+    model = torch.hub.load(yolov5_path, &#39;custom&#39;,model_path, source=&#39;local&#39;,force_reload=True)
+    model.classes = chosse_classes # class =&#39;plate&#39;
+    return model
+
+def inference(img_path,model):
+    img = Image.open(img_path)
+    img = img.rotate(0, expand=True)
+    results = model(img,size=80)
+    results.show()
+    print(results.pandas().xyxy[0].sort_values(by=&quot;xmin&quot;,ascending=True))
+
+def main():
+    yolov5_path = r&#39;C:\Users\ansel_chen\VScode_Ansel\pytorch_practice\yolov5&#39;
+    model_path = r&#39;C:\Users\ansel_chen\VScode_Ansel\pytorch_practice\model\moto.pt&#39;
+    chosse_classes = [i for i in range(35)]
+    img_path = r&#39;C:\Users\ansel_chen\VScode_Ansel\pytorch_practice\torch_crop\test\plate.jpg&#39;
+
+    try:
+        print(&#39;import model&#39;)
+        model = model_load(yolov5_path,model_path,chosse_classes)
+    except:
+        print(&#39;import model fail&#39;)
+
+    try:
+        print(&#39;start inference&#39;)
+        inference(img_path,model)
+
+    except:
+        print(&#39;inference error&#39;)
+
+if __name__ == &#39;__main__&#39;:
+    main()
+</code></pre>
+<p>跟剛剛用同一套模型只是拿掉plate的類別，之後再用sort_values(by&#x3D;”xmin”,ascending&#x3D;True)降冪排序讓偵測到的內容是由左至右!</p>
+<div style="float: left; width: 50%;">
+  <img src="./plate1.jpg" alt="plate" style="display:block; margin:auto;" height="30%" width="50%"/>
+</div>
+<div tyle="float: right; width: 50%;">
+  <img src="./result.jpg" alt="result" style="display:block; margin:auto;"height="60%" width="45%" />
+</div>
+
+<p>很明顯辨識效果一樣沒有很好，畢竟訓練集沒有很完整，所以之後要用這個方法進辨識的話車牌的角度跟資料量就需要再更完整才行。</p>
 
         </div>
 
